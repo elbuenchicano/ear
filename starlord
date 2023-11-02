@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH --gres=gpu:1080:1
+#SBATCH --qos=high
+
+module load cudnn/7.0.5
+module load cuda/9.0
+
+conda env update -f environment.yml
+source activate starlord
+
+srun python supercon.py

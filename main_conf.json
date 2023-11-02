@@ -1,0 +1,40 @@
+{
+    "functions": [ "initdb" ],
+    "general": {
+        "directory": "supercon",
+        "prefix_path": {
+            "win": "I:/research",
+            "linux": "/mnt/users/rensso"
+        }
+    },
+    "initdb": {
+        "to_init": [ "Cox" ],
+        "datasets": {
+            "Cox": {
+                "win": "I:/research/Bio/db/cox/data",
+                "linux": "/storage/datasets/faces/cox/data"
+            }
+        }
+    },
+    "earfeatures": {
+        "to_init": "Cox",
+        "Cox": {
+            "mode": "all",
+            "byset": {
+                "train": [ "c1", "c2" ],
+                "valid": [ "c3", "st" ]
+            }
+        }
+    },
+
+    "supercon": {
+        "db_name": "Cox",
+        "Cox": {
+            "mode": "byset",
+            "byset": {
+                "train": [ "c1", "c2" ],
+                "valid": [ "c3", "st" ]
+            }
+        }
+    }
+}
